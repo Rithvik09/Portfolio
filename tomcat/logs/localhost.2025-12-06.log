@@ -1,0 +1,71 @@
+06-Dec-2025 16:46:21.279 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+06-Dec-2025 16:46:21.279 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+06-Dec-2025 16:46:21.280 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@7a11c4c7')
+06-Dec-2025 16:58:08.875 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+06-Dec-2025 16:58:08.876 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+06-Dec-2025 16:58:08.877 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@5eefa415')
+06-Dec-2025 16:58:09.071 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+06-Dec-2025 16:58:09.071 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+06-Dec-2025 16:58:40.726 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/cs336Sample] threw exception [An exception occurred processing [/checkLoginDetails.jsp] at line [15]
+
+12:         String userid = request.getParameter("username");
+13:         String pwd = request.getParameter("password");
+14:         Class.forName("com.mysql.jdbc.Driver");
+15:         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/buyme", "root", "christian123");
+16:         Statement st = con.createStatement();
+17:         ResultSet rs;
+18:         
+
+
+Stacktrace:] with root cause
+	java.net.ConnectException: Connection refused
+		at java.base/sun.nio.ch.Net.connect0(Native Method)
+		at java.base/sun.nio.ch.Net.connect(Net.java:589)
+		at java.base/sun.nio.ch.Net.connect(Net.java:578)
+		at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:583)
+		at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+		at java.base/java.net.Socket.connect(Socket.java:760)
+		at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:211)
+		at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:299)
+		at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2187)
+		at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2220)
+		at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2015)
+		at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:768)
+		at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+		at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+		at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+		at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+		at com.mysql.jdbc.Util.handleNewInstance(Util.java:403)
+		at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:385)
+		at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:323)
+		at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682)
+		at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+		at org.apache.jsp.checkLoginDetails_jsp._jspService(checkLoginDetails_jsp.java:132)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:62)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:438)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:349)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:300)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:197)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:142)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:142)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:643)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:935)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1831)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1575)
