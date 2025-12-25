@@ -1,0 +1,13 @@
+.DS_Store
+
+# Logs
+*.log
+*.out
+
+# Tomcat (local runtime / binaries)
+tomcat/
+
+# OS / editor
+.vscode/
+.idea/
+
